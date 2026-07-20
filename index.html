@@ -1,266 +1,628 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="禁煙シバ：柴犬と続ける禁煙カウンターのプライバシーポリシー"
-    />
-    <title>プライバシーポリシー | 禁煙シバ</title>
-    <style>
-      :root {
-        --ink: #082b49;
-        --muted: #526273;
-        --paper: #ffffff;
-        --ground: #f4f8fb;
-        --line: #dce6ec;
-        --accent: #7851a9;
-        --accent-soft: #eee5ff;
-        --green: #5d9369;
-      }
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="禁煙シバは、かわいい柴犬と一緒に禁煙を続けるための禁煙カウンターアプリです。">
+  <title>禁煙シバ｜柴犬と続ける禁煙カウンター</title>
+  <style>
+    :root {
+      --navy: #062b4a;
+      --sky: #e9f3ff;
+      --paper: #fff;
+      --ink: #082b49;
+      --muted: #566878;
+      --line: #d8e5ed;
+      --lavender: #e9dcfb;
+      --green: #dfeedd;
+      --yellow: #fff2bf;
+      --max: 1120px;
+    }
 
-      * {
-        box-sizing: border-box;
-      }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-      html {
-        scroll-behavior: smooth;
-      }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #f8fbfd;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.7;
+    }
 
-      body {
-        margin: 0;
-        background: var(--ground);
-        color: var(--ink);
-        font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
-          "Yu Gothic", Meiryo, sans-serif;
-        font-size: 16px;
-        line-height: 1.85;
-      }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
 
-      .hero {
-        padding: 56px 24px 48px;
-        color: #fff;
-        background: linear-gradient(
-          135deg,
-          #082b49 0%,
-          #154d72 64%,
-          #5d9369 150%
-        );
-      }
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(14px);
+    }
 
-      .hero-inner,
-      main,
-      footer {
-        max-width: 860px;
-        margin: 0 auto;
-      }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+      gap: 18px;
+    }
 
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        margin: 0 0 14px;
-        color: #dceeff;
-        font-size: 0.9rem;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-      }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
 
-      .paw {
-        font-size: 1.35rem;
-      }
+    .logo-mark {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: var(--lavender);
+      font-size: 1.2rem;
+    }
 
-      h1 {
-        margin: 0;
-        font-size: clamp(1.8rem, 5vw, 2.65rem);
-        line-height: 1.3;
-        letter-spacing: 0.02em;
-      }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #41576a;
+      font-size: .9rem;
+      font-weight: 700;
+    }
 
-      .lead {
-        max-width: 650px;
-        margin: 14px 0 0;
-        color: #e2eff7;
-      }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 52px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 10px 20px rgba(6,43,74,.18);
+      transition: .2s;
+    }
 
-      main {
-        padding: 32px 24px 56px;
-      }
+    .button:hover {
+      transform: translateY(-2px);
+      background: #164d70;
+    }
 
-      article {
-        overflow: hidden;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: var(--paper);
-        box-shadow: 0 10px 32px rgba(8, 43, 73, 0.07);
-      }
+    .button--small {
+      min-height: 42px;
+      padding: 8px 16px;
+      font-size: .86rem;
+    }
 
-      .section {
-        padding: 28px 30px;
-        border-bottom: 1px solid var(--line);
-      }
+    .hero {
+      overflow: hidden;
+      padding: 76px 0 58px;
+      background: linear-gradient(145deg, #f0f7ff 0%, #f7fbff 50%, #f3edff 100%);
+    }
 
-      .section:last-child {
-        border-bottom: 0;
-      }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr .86fr;
+      align-items: center;
+      gap: 60px;
+    }
 
-      h2 {
-        margin: 0 0 12px;
-        font-size: 1.2rem;
-        line-height: 1.5;
-      }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      margin: 0 0 16px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: #fff;
+      color: #4a2e77;
+      font-size: .88rem;
+      font-weight: 800;
+    }
 
-      p {
-        margin: 0 0 12px;
-      }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.35rem, 5.4vw, 4.45rem);
+      line-height: 1.21;
+      letter-spacing: -.05em;
+    }
 
-      p:last-child {
-        margin-bottom: 0;
-      }
+    h1 strong { color: #4a2385; }
 
-      ul {
-        margin: 10px 0 0;
-        padding-left: 1.25em;
-      }
+    .hero-copy {
+      max-width: 570px;
+      margin: 24px 0 28px;
+      color: #40596d;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+    }
 
-      li + li {
-        margin-top: 5px;
-      }
+    .hero-notes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 20px 0 0;
+      color: #526878;
+      font-size: .86rem;
+      font-weight: 700;
+    }
 
-      a {
-        color: #365f95;
-        font-weight: 700;
-        overflow-wrap: anywhere;
-      }
+    .hero-notes span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+    }
 
-      .meta {
-        display: grid;
-        gap: 8px;
-        margin-top: 26px;
-        padding: 16px 18px;
-        border-radius: 12px;
-        background: #f5f8fa;
-        font-size: 0.93rem;
-      }
+    .phone-wrap {
+      position: relative;
+      justify-self: center;
+      width: min(100%, 350px);
+    }
 
-      .meta b {
-        color: var(--ink);
-      }
+    .phone {
+      position: relative;
+      display: block;
+      width: 100%;
+      border: 8px solid #10243b;
+      border-radius: 39px;
+      box-shadow: 0 26px 45px rgba(9,43,73,.27);
+    }
 
-      footer {
-        padding: 0 24px 40px;
-        color: var(--muted);
-        font-size: 0.84rem;
-        text-align: center;
-      }
+    .float-card {
+      position: absolute;
+      right: -54px;
+      bottom: 68px;
+      width: 156px;
+      padding: 13px 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 30px rgba(8,43,73,.15);
+      font-size: .78rem;
+      font-weight: 800;
+    }
 
-      @media (max-width: 560px) {
-        .hero {
-          padding: 40px 20px 35px;
-        }
+    .float-card b {
+      display: block;
+      color: #4a2385;
+      font-size: 1.05rem;
+    }
 
-        main {
-          padding: 22px 14px 42px;
-        }
+    .intro {
+      padding: 82px 0;
+      background: #fff;
+      text-align: center;
+    }
 
-        .section {
-          padding: 23px 20px;
-        }
-      }
-    </style>
-  </head>
+    .section-kicker {
+      margin: 0 0 10px;
+      color: #4a2385;
+      font-size: .85rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
 
-  <body>
-    <header class="hero">
-      <div class="hero-inner">
-        <p class="brand"><span class="paw">🐾</span> 禁煙シバ</p>
-        <h1>プライバシーポリシー</h1>
-        <p class="lead">
-          「禁煙シバ：柴犬と続ける禁煙カウンター」（以下「本アプリ」）における利用者情報の取扱いについて説明します。
+    h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      line-height: 1.38;
+      letter-spacing: -.03em;
+    }
+
+    .section-copy {
+      max-width: 650px;
+      margin: 18px auto 0;
+      color: var(--muted);
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 42px;
+      text-align: left;
+    }
+
+    .benefit {
+      padding: 27px 24px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fbfdff;
+    }
+
+    .benefit-icon {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      margin-bottom: 16px;
+      border-radius: 15px;
+      background: var(--lavender);
+      font-size: 1.36rem;
+    }
+
+    .benefit:nth-child(2) .benefit-icon { background: var(--green); }
+    .benefit:nth-child(3) .benefit-icon { background: var(--yellow); }
+
+    .benefit h3 { margin: 0 0 7px; font-size: 1.12rem; }
+    .benefit p { margin: 0; color: var(--muted); font-size: .93rem; }
+
+    .feature-section { padding: 88px 0; }
+
+    .feature {
+      display: grid;
+      grid-template-columns: .76fr 1fr;
+      align-items: center;
+      gap: clamp(35px, 8vw, 105px);
+      padding: 58px 0;
+    }
+
+    .feature + .feature { border-top: 1px solid var(--line); }
+    .feature:nth-child(even) .feature-image { order: 2; }
+
+    .feature-image {
+      justify-self: center;
+      width: min(100%, 282px);
+    }
+
+    .feature-image img {
+      display: block;
+      width: 100%;
+      border: 7px solid #10243b;
+      border-radius: 30px;
+      box-shadow: 0 18px 36px rgba(8,43,73,.18);
+    }
+
+    .feature-number {
+      display: block;
+      margin-bottom: 10px;
+      color: #6d4da0;
+      font-size: .85rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+    }
+
+    .feature h3 {
+      margin: 0;
+      font-size: clamp(1.55rem, 3vw, 2.35rem);
+      line-height: 1.4;
+    }
+
+    .feature p { margin: 16px 0 0; color: var(--muted); }
+
+    .feature-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+      color: #314f66;
+      font-size: .94rem;
+      font-weight: 700;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      display: inline-grid;
+      place-items: center;
+      width: 21px;
+      height: 21px;
+      margin-right: 9px;
+      border-radius: 50%;
+      background: #dfeedd;
+      color: #376b42;
+      font-size: .78rem;
+    }
+
+    .privacy {
+      padding: 72px 0;
+      background: #edf6ef;
+    }
+
+    .privacy-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 23px;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 30px 34px;
+      border: 1px solid #cee4d2;
+      border-radius: 24px;
+      background: rgba(255,255,255,.76);
+    }
+
+    .privacy-icon {
+      display: grid;
+      place-items: center;
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      background: #d7edd9;
+      font-size: 1.8rem;
+    }
+
+    .privacy h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+    .privacy p { margin: 7px 0 0; color: #4d6654; }
+
+    .privacy a {
+      display: inline-block;
+      margin-top: 11px;
+      color: #245c32;
+      font-size: .9rem;
+      font-weight: 900;
+      text-decoration: underline;
+    }
+
+    .download {
+      padding: 88px 0;
+      color: #fff;
+      background: linear-gradient(140deg, #092d4b, #155377);
+      text-align: center;
+    }
+
+    .download .section-kicker { color: #bce6d1; }
+    .download h2 { color: #fff; }
+
+    .download p {
+      max-width: 590px;
+      margin: 16px auto 28px;
+      color: #d4e4ef;
+    }
+
+    .download .button {
+      background: #fff;
+      color: #062b4a;
+      box-shadow: none;
+    }
+
+    .download-note {
+      margin-top: 13px !important;
+      font-size: .8rem;
+      color: #b7ccd9 !important;
+    }
+
+    footer {
+      padding: 30px 0;
+      background: #051f35;
+      color: #b7cad8;
+      font-size: .82rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-inner a { text-decoration: underline; }
+
+    @media (max-width: 760px) {
+      .nav-links a:not(.button) { display: none; }
+      .hero { padding: 48px 0 46px; }
+      .hero-grid, .feature { grid-template-columns: 1fr; gap: 36px; }
+      .phone-wrap { width: min(78vw, 330px); }
+      .float-card { right: -29px; bottom: 58px; }
+      .benefit-grid { grid-template-columns: 1fr; }
+      .feature-section { padding: 45px 0; }
+      .feature { padding: 48px 0; }
+      .feature:nth-child(even) .feature-image { order: initial; }
+      .feature-image { width: min(72vw, 290px); }
+      .privacy-card { grid-template-columns: 1fr; padding: 27px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="#top"><span class="logo-mark">🐾</span>禁煙シバ</a>
+
+      <div class="nav-links">
+        <a href="#features">できること</a>
+        <a href="#privacy">プライバシー</a>
+        <a class="button button--small" href="#download">ダウンロード</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">🐕 あなたの禁煙パートナー</p>
+
+          <h1>
+            ひとりで耐えない。<br>
+            <strong>柴犬と続ける</strong>禁煙。
+          </h1>
+
+          <p class="hero-copy">
+            禁煙シバは、かわいい柴犬と一緒に、吸いたい瞬間を乗り越えるための禁煙カウンターアプリです。日々の成果を見える化して、今日の「吸わなかった」を自信に変えていきます。
+          </p>
+
+          <a class="button" href="#download">🐾 禁煙シバをダウンロード</a>
+
+          <div class="hero-notes">
+            <span>禁煙時間をリアルタイム表示</span>
+            <span>気分転換ゲーム</span>
+            <span>記録は端末内で管理</span>
+          </div>
+        </div>
+
+        <div class="phone-wrap">
+          <img class="phone" src="assets/home.png" alt="禁煙時間や節約額を表示する禁煙シバのホーム画面">
+          <div class="float-card">吸わなかった本数<b>246 本</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="container">
+        <p class="section-kicker">WHY KINEN SHIBA?</p>
+        <h2>吸いたい時こそ、<br>シバがそばにいる。</h2>
+
+        <p class="section-copy">
+          禁煙は、意志の強さだけで続けるものではありません。気持ちを切り替えるきっかけと、小さな達成を見つけること。禁煙シバはその毎日に寄り添います。
+        </p>
+
+        <div class="benefit-grid">
+          <article class="benefit">
+            <div class="benefit-icon">⏱️</div>
+            <h3>続けた時間が見える</h3>
+            <p>禁煙日数、節約額、吸わなかった本数をリアルタイムで確認できます。</p>
+          </article>
+
+          <article class="benefit">
+            <div class="benefit-icon">🐕</div>
+            <h3>柴犬が応援してくれる</h3>
+            <p>名前をつけたあなただけの相棒が、毎日の禁煙をあたたかく応援します。</p>
+          </article>
+
+          <article class="benefit">
+            <div class="benefit-icon">🌿</div>
+            <h3>吸いたい時に切り替える</h3>
+            <p>深呼吸、パズル、なでなでなどで、気持ちを自然にリフレッシュ。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="feature-section container">
+      <article class="feature">
+        <div class="feature-image">
+          <img src="assets/home.png" alt="禁煙開始からの日数と節約額を確認できるホーム画面">
+        </div>
+
+        <div>
+          <span class="feature-number">01 / 毎日の成果を見える化</span>
+          <h3>続いていることを、<br>ちゃんと実感できる。</h3>
+
+          <p>
+            禁煙時間、節約できた金額、吸わなかった本数をひと目で表示。日々の小さな積み重ねが、次の一日を続ける力になります。
+          </p>
+
+          <ul class="feature-list">
+            <li>秒単位で伸びる禁煙カウンター</li>
+            <li>節約できた金額・本数を表示</li>
+            <li>今日の達成度をチェック</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-image">
+          <img src="assets/breathing.png" alt="柴犬と深呼吸をする呼吸ゲーム画面">
+        </div>
+
+        <div>
+          <span class="feature-number">02 / 吸いたい時の気分転換</span>
+          <h3>数分を乗り越える、<br>自分だけの切り替え習慣。</h3>
+
+          <p>
+            吸いたくなった時は、柴犬と呼吸を整えたり、パズルで手と頭を動かしたり。気持ちを別のことへ向けるためのメニューを用意しています。
+          </p>
+
+          <ul class="feature-list">
+            <li>ゆっくり呼吸する呼吸ゲーム</li>
+            <li>手軽に遊べるスライドパズル</li>
+            <li>柴犬なでなででほっと一息</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-image">
+          <img src="assets/diary.png" alt="気分や対処法を記録するシバ日記の画面">
+        </div>
+
+        <div>
+          <span class="feature-number">03 / 自分を知る記録</span>
+          <h3>気持ちを残すと、<br>次の対処が見えてくる。</h3>
+
+          <p>
+            その時の気分、吸いたくなった理由、乗り越えるためにしたことを記録。自分に合う気分転換を見つけるヒントになります。
+          </p>
+
+          <ul class="feature-list">
+            <li>今の気分を選んで記録</li>
+            <li>状況や対処法をメモ</li>
+            <li>柴犬と一緒に振り返る</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-image">
+          <img src="assets/health.png" alt="禁煙後の健康の変化の目安を確認できる画面">
+        </div>
+
+        <div>
+          <span class="feature-number">04 / 健康の変化を知る</span>
+          <h3>続けるほど、<br>体の変化を感じられる。</h3>
+
+          <p>
+            禁煙を続けることで期待される健康面の変化を、進捗として確認できます。前に進んでいる実感が、継続の励みになります。
+          </p>
+
+          <ul class="feature-list">
+            <li>健康の変化をわかりやすく表示</li>
+            <li>継続のモチベーションに</li>
+            <li>あなたのペースで取り組める</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="privacy" class="privacy">
+      <div class="container">
+        <div class="privacy-card">
+          <div class="privacy-icon">🔒</div>
+
+          <div>
+            <h2>あなたの記録は、あなたのためだけに。</h2>
+            <p>
+              禁煙記録や日記などのデータは端末内で管理され、広告・アクセス解析SDKは使用していません。
+            </p>
+            <a href="../index.html">プライバシーポリシーを読む →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="download">
+      <div class="container">
+        <p class="section-kicker">START TODAY</p>
+        <h2>今日の一歩を、<br>シバと一緒に。</h2>
+
+        <p>
+          完璧じゃなくて大丈夫。まずは、今日を乗り越えることから始めましょう。
+        </p>
+
+        <!-- # をGoogle PlayのアプリURLに置き換えてください -->
+        <a class="button" href="#">Google Playでダウンロード</a>
+
+        <p class="download-note">
+          ※ 本アプリは禁煙の継続を支援するためのアプリであり、医療行為・診断・治療を目的としたものではありません。
         </p>
       </div>
-    </header>
+    </section>
+  </main>
 
-    <main>
-      <article>
-        <section class="section">
-          <h2>1. 取得する情報</h2>
-          <p>
-            本アプリは、禁煙の記録およびアプリ内機能の提供のため、利用者が入力した以下の情報を端末内に保存します。
-          </p>
-          <ul>
-            <li>柴犬の名前</li>
-            <li>禁煙開始日、たばこの価格、1日の平均喫煙本数</li>
-            <li>禁煙日記、気分、吸いたくなった状況および対処の記録</li>
-            <li>アプリ内の達成状況、設定および通知に関する情報</li>
-          </ul>
-          <p>
-            これらの情報は、利用者が本アプリ内で自身の禁煙状況を確認・記録するために利用します。
-          </p>
-        </section>
-
-        <section class="section">
-          <h2>2. 情報の送信・第三者提供</h2>
-          <p>
-            本アプリは、前項の利用者情報を開発者のサーバーその他の外部サーバーへ送信しません。また、利用者情報を第三者に販売、共有または提供しません。
-          </p>
-        </section>
-
-        <section class="section">
-          <h2>3. 広告・アクセス解析について</h2>
-          <p>
-            本アプリは、行動ターゲティング広告を配信するための広告SDKおよび、利用者を識別するアクセス解析SDKを使用しません。
-          </p>
-        </section>
-
-        <section class="section">
-          <h2>4. 通知について</h2>
-          <p>
-            本アプリは、禁煙の継続を支援するため、利用者の許可を得た場合に端末へ通知を送信することがあります。通知の許可は、端末の設定からいつでも変更できます。
-          </p>
-        </section>
-
-        <section class="section">
-          <h2>5. 情報の管理・削除</h2>
-          <p>
-            本アプリ内の記録は利用者の端末内で管理されます。アプリ内に削除機能がある場合は、その機能から記録を削除できます。また、本アプリをアンインストールすることで、端末内のアプリデータが削除される場合があります。端末やOSの設定、バックアップの仕様については、各提供元の案内をご確認ください。
-          </p>
-        </section>
-
-        <section class="section">
-          <h2>6. お子さまの利用について</h2>
-          <p>
-            本アプリは、未成年の方による利用を意図して個人情報を収集するものではありません。
-          </p>
-        </section>
-
-        <section class="section">
-          <h2>7. 本ポリシーの変更</h2>
-          <p>
-            法令の変更または本アプリの機能変更等に伴い、本ポリシーを変更することがあります。重要な変更を行う場合は、本アプリまたは本ページにてお知らせします。
-          </p>
-        </section>
-
-        <section class="section">
-          <h2>8. お問い合わせ</h2>
-          <p>
-            本ポリシーおよび利用者情報の取扱いに関するお問い合わせは、以下の連絡先までお願いいたします。
-          </p>
-          <p>
-            <a href="mailto:appbee1010@gmail.com">appbee1010@gmail.com</a>
-          </p>
-
-          <div class="meta">
-            <div>
-              <b>アプリ名：</b>禁煙シバ：柴犬と続ける禁煙カウンター
-            </div>
-            <div><b>制定日：</b>2026年7月20日</div>
-          </div>
-        </section>
-      </article>
-    </main>
-
-    <footer>© 2026 禁煙シバ</footer>
-  </body>
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 禁煙シバ</span>
+      <a href="../index.html">プライバシーポリシー</a>
+    </div>
+  </footer>
+</body>
 </html>
